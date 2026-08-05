@@ -5,18 +5,8 @@
 
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
+  - package-ecosystem: "bundler"
     directories:
       - "/"
-      - "/.github/actions/*"
     schedule:
       interval: "weekly"
-    groups:
-      gh-actions-packages:
-        patterns:
-          - "*"
-    ignore:
-      # Updated by .github/workflows/update-system-tests.yml, which keeps the workflow's `ref` input in sync.
-      - dependency-name: "DataDog/system-tests/.github/workflows/system-tests.yml"
-    cooldown:
-      default-days: 7
